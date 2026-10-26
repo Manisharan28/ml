@@ -14,9 +14,13 @@ kn = KNeighborsClassifier(n_neighbors=1)
 
 kn.fit(X_train,y_train)
 
+x_new = np.array([[5, 2.9, 1, 0.2]])
 
+prediction = kn.predict(x_new)
 
-
+print("Predicted target value:", prediction)
+print("Predicted flower name:",
+      iris.target_names[prediction[0]])
 
 
 for i in range(len(X_test)):
